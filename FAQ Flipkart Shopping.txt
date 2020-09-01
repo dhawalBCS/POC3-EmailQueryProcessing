@@ -1,0 +1,172 @@
+Shopping
+
+
+1.Why do I see different prices for the same product?
+A.You could see different prices for the same product, as it could be listed by many Sellers.
+
+
+2.Is installation offered for all products?
+A.Installation and demo are offered for certain items by sellers through the brand or an authorised service provider. Please check the individual product page to see if these services are offered for the item.
+
+
+3.Is it necessary to have an account to shop on Flipkart?
+A.Yes, it's necessary to log into your Flipkart account to shop. Shopping as a logged-in user is fast & convenient and also provides extra security.
+You'll have access to a personalised shopping experience including recommendations and quicker check-out.
+
+
+4.What does 'Preorder' or 'Forthcoming' mean?
+A.Items marked as 'Preorder' or 'Forthcoming' are expected to be released soon and you can pre-book them with sellers. Such items will be shipped after their official release by the seller with whom you've pre-booked them.
+
+
+5.Do sellers on Flipkart ship internationally?
+A.Currently, sellers on Flipkart only ship within India.
+
+
+6.Can I use an item that has been given to me as a gift from a state sponsored or an NGO-funded freebie distribution programme to get discounts through exchange offers?
+A.No, as per company policy, such items are not eligible for discounts under exchange offers. You can also refer to the 'Exchange Offers' section in the 'Terms of Use' page for more details.
+
+
+Will I get a wall mount for my television in the box?
+
+Can I order a product that is 'Out of Stock' or 'Temporarily Unavailable'?
+
+What does 'Out of Stock' mean?
+
+What does 'Permanently Discontinued' or 'Out of Print' mean?
+
+What does the badge Flipkart Assured mean?
+
+Do I have to pay extra for items with the Flipkart Assured badge?
+
+What is Flipkart Buyer Protection?
+
+Why do I see a shipping charge for an item with the Flipkart Assured badge?
+
+Is Flipkart Advantage the same as Flipkart Assured?
+
+How does 'Instant Cashback' work?
+
+Is there a filter available through which I can only see items with a Flipkart Assured badge?
+
+What are the benefits of buying an item with a Flipkart Assured badge?
+
+How are items packaged?
+
+Are there any hidden charges (Octroi or Sales Tax) when I shop on Flipkart?
+
+Why do I see different prices for books with the same title?
+
+Can I club my orders from different sellers to be delivered together?
+
+Why do I see a 'delivery charge'?
+
+
+
+
+
+___________________________________________________________________________________________________________________________
+
+
+
+
+1.Why do I see different prices for the same product?
+values5.All(function(x) subject.Contains(x))
+(?=.*different)(?=.*prices)
+{"different","prices","same","product"}
+{"do" , " i" , "prices"}
+
+
+2.Is installation offered for all products?
+values6.All(function(x) subject.Contains(x))
+(?=.*installation)(?=.*offered)
+{"installation","offered","all"}
+{ "all", "products" }
+
+
+3.Is it necessary to have an account to shop on Flipkart?
+Is it necessary to have an account to shop 
+values7.All(function(x) subject.Contains(x))
+(?=.*necessary)(?=.*account)
+{"necessary","account","to","shop"}
+{ "shop", "all" ,"devices"}
+
+
+Is it necessary to have an account to shop on ecomerce site
+values7_1.All(function(x) subject.Contains(x))
+(?=.*necessary)(?=.*shop)
+{"necessary","shop"}
+
+
+4.What does 'Preorder' or 'Forthcoming' mean?
+
+values8.All(function(x) subject.Contains(x))
+(?=.*'Preorder)(?=.*mean)
+values8
+{"Preorder","Forthcoming","mean"}
+
+Any 
+
+if blank
+{" "} --------run
+
+
+
+{"Preorder","mean" ,"return","product","to","the"}
+
+
+
+values8_1.All(function(x) subject.Contains(x))
+(?=.*Forthcoming)(?=.*mean)
+{"Forthcoming","mean"}
+
+
+5.Do sellers on Flipkart ship internationally?
+values9.All(function(x) subject.Contains(x))
+(?=.*'ship)(?=.*internationally)
+
+{"sellers", "ship","internationally"}
+{"What","Forthcoming","mean"}
+
+
+6.Can I use an item that has been given to me as a gift from a state sponsored or an NGO-funded freebie distribution programme to get discounts through exchange offers?
+
+
+
+______________________________________________________________________________________________________________
+
+
+
+5.Do sellers on Flipkart ship internationally?
+Do sellers on Flipkart ship internationally
+values9.All(function(x) subject.Contains(x)) 
+{"sellers", "ship","internationally"}--------------------------->>>>>>this keyword compusory in the subject ; not use extra keyword if we use not mentioned keywords then its not working 
+						...............keywords compare with the subject 	
+and
+
+value10.Any(function(x) subject.Contains(x))
+{"Forthcoming","mean","Flipkart"}----------------->>>>>>"Flipkart" key word is present in subject then is run / executed successfully.
+{"Forthcoming","mean"} ------------------------------->>>>>not run beacause there are keywords Missing  in subject.
+
+____________________________________________________________________________________________________________
+
+
+
+Auditing Material :
+
+purchase 
+sell
+
+Date AG(2 years not get money its called Loss) Auditing
+
+income 
+out
+
+
+
+
+
+
+
+
+
+

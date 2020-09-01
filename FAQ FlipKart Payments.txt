@@ -1,0 +1,113 @@
+Payment
+
+
+1.What is Flipkart's credit card EMI payment option?
+A.With Flipkart’s credit card EMI option, you can choose to pay in easy installments of 3, 6, 9, 12, 18, or 24 months, with credit cards from the following banks:
+
+HDFC
+Citi
+ICICI
+Kotak
+Axis
+Induslnd
+SBI
+Standard Chartered
+HSBC
+*18 & 24 months EMI options are available from select banks only. Please refer to the table below for more details:
+
+Banks	Supports 18 & 24 months tenure	Minimum order value to avail 18 & 24 months EMI options
+HDFC	Yes	₹ 10,000
+Citi	Yes	₹ 10,000
+ICICI	Yes	₹ 10,000
+Kotak	Yes	₹ 4,000
+Axis	Yes	₹ 4,000
+IndusInd	Yes	₹ 4,000
+SBI	No	NA
+Standard Chartered	Yes	₹ 4,000
+HSBC	No	NA
+
+
+2.How can I order for large quantities of the product as part of a corporate order?
+A.You can write to corporatesales@flipkart.com for your corporate gifting requirements.
+
+
+3.How can I label my saved cards?
+A.You can specify a card label at the time of saving a card on Flipkart through the 'My Account' section. You can also add/edit the label anytime through 'My Saved Cards' in the 'My Account' section on Flipkart.
+\A.A card label is a name you give to your card while saving it on Flipkart.
+This helps in identifying the card at the time of making a payment. Even if you don't specify a card label, you can still identify the card by the first 2 and last 4 digits of the card number which are visible to you when the saved card is shown.
+
+4.What is a 'card label'?
+A.A card label is a name you give to your card while saving it on Flipkart.
+This helps in identifying the card at the time of making a payment. Even if you don't specify a card label, you can still identify the card by the first 2 and last 4 digits of the card number which are visible to you when the saved card is shown.
+
+5.What is the 'Save Card' feature?
+A.The 'Save Card' option lets you save your credit/debit cards on your Flipkart account. This helps you complete your transactions in a quick and easy way.
+
+
+6.How does Flipkart prevent card fraud?
+A.Online payments are monitored by our systems for any suspicious activity and some transactions are verified through extensive checks if we find that they are not authorised by the owner of the card. When we're not able to rule fraud out in rare cases, the transaction is kept on hold and we ask the shopper to share relevant proofs. This is done to make sure that the transaction is genuine and authorised.
+
+
+__________________________________________________________________________________________________
+
+
+1.What is Flipkart's credit card EMI payment option?
+Flipkart's credit card EMI payment option
+values10.All(Function(x) subject.Contains(x)) and 
+{"credit","card","EMI"}
+
+value10.Any(Function(x) subject.Contains(x))
+{"EMI","option","shopping","mobile"}
+
+
+2.How can I order for large quantities of the product as part of a corporate order?
+order for large quantities of the product as part of a corporate order
+values11.All(Function(x) subject.Contains(x)) and 
+{"large","quantities","order","products"}
+{"order", "large", "quantities", "product", "part" , "corporate"}
+
+value11.Any(Function(x) subject.Contains(x))
+{"corporate","mobile ", "tablets","order"}
+
+
+3.How can I label my saved cards?
+I label my saved cards
+
+values12.All(Function(x) subject.Contains(x)) and 
+{"label","my","saved","cards"}
+
+value12.Any(Function(x) subject.Contains(x))
+
+
+
+4.What is a 'card label'?
+card label
+values13.All(Function(x) subject.Contains(x)) and 
+{"card","label"}
+value13.Any(Function(x) subject.Contains(x))
+
+
+5.What is the 'Save Card' feature?
+save card
+values14.All(Function(x) subject.Contains(x)) and 
+{"save","card"}
+value14.Any(Function(x) subject.Contains(x))
+
+
+6.How does Flipkart prevent card fraud?
+
+values15.All(Function(x) subject.Contains(x)) and 
+{"prevent","fraud"}
+value15.Any(Function(x) subject.Contains(x))
+
+
+
+
+
+
+
+
+
+
+
+

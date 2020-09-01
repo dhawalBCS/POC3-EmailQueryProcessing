@@ -1,0 +1,154 @@
+Cancellations and Returns
+
+Return Product
+
+
+1.If I request for a replacement, when will I get it?
+A.Visit My Orders to check the status of your replacement.
+In most locations, the replacement item is delivered to you at the time of pick-up. In all other areas, the replacement is initiated after the originally delivered item is picked up. Please check the SMS & email we send you for your replacement request for more details.
+
+
+2.Which products are not eligible for returns?
+A.The following table contains a list of products that are not eligible for returns as per the seller’s Returns Policy:
+Category :
+Products that can’t be returned
+
+Auto Accessories :
+Additives, Air Fresheners, Brighteners, Cleaners, Bike/Car Stickers, Degreasers, Dent/Scratch Removers, Filler Putty, Headlight Vinyl Films, Liquid Solutions, Lubricants, Polish, Power Steering Fluids, Sealants, Oils and Wax
+
+Automobiles :
+Cars, Mopeds, Motorcycles and Scooters
+
+Bath and Spa
+Bath Bubble/Salt/Sponge/Wash, Body Wash, Loofahs, Scrubs, Shampoos and Soaps
+
+Baby Care
+Bottle Nipples, Breast Nipple Care, Breast Pumps, Diapers, Ear Syringes, Nappy, Wet Reminder, Wipes and Wipe Warmers
+
+Cleaning Products
+Cleaning Gels, Detergents, Detergent Pods, Fabric Wash Products, Surface Cleaners, Stain Removers and Washing Bars/Powder
+
+Computer Accessories
+Blank/Educational Media, CDs/DVDs, Ink Toners, Music, Movies and Software
+
+Food and Nutrition
+Canned Food, Condiments, Drinks, Fruits, Health Supplements, Meat, Seafood, Syrups, Vegetables and other Edible Products
+
+Fashion
+Baby Dolls, Clothing Freebies, Lingerie Wash-bags, Shapewear, Socks, Stockings and Swimsuits
+
+Footwear Accessories
+Oils, Glue, Grease, Socks, Shoe Deodorants/Polish Creams/Sprays and Wax
+
+Gardening Products
+Plant Saplings, Plant Seeds and Soil Manure
+
+Health Care
+Antiseptic, Band Aid, Body Pain Relief, Eye Drops, First Aid Tape, Glucometer Lancet/Strip, Healthcare Devices and Kits, Medical Dressing/Gloves and pH Test Strip
+
+Home Products
+Adhesives, Barbeque wood, Bird/Insect Repellent, Contact Cement, Crack Fillers, Inks, Guitar/Yoyo Friction Stickers, Marker Refills, Mosquito Coil/Vaporiser/Vaporiser Refills, Naphthalene Balls, Scuba/Smoking-Pipe Mouthpieces and Sprays
+
+Hygiene
+Cannula, Contact Lens, e-Hookah, Fake Moustache, Female Urination Devices, Menstrual Cups, Needles, Panty Liners, Shaving Products, Smoking Patch, Straws, Sweat Pads, Tampons, Teeth Whitening Products/Wipes, Tissues, Toilet Tissue Aid, Toilet Rolls and Women Intimate Care
+
+Music Instrument Accessories
+Mouthpiece Cap/Pad/Set, Oils and Polish
+
+Party Supplies
+Balloons, Candles, Cut-outs, Decoration articles and Whistles
+
+Festive Supplies
+Hookah Charcoal/Flavor/Mouth-tip, Incense Sticks and Holi/Rangoli Color
+
+Personal Care
+Conditioners, Creams, Deodorants, Electric Ear Cleaners, Eyebrow/Eyelash/Hair Styling Products, Eye Mask, Face Wash, Face Care/Fairness Products, Fragrance, Fresheners, Gels, Hair Care, Kajal, Lens Solution, Lip Plumper/Stain, Blackhead/Makeup/Nail Paint Removers, Mascara, Mehendi, Nail Sanding Pad, Oils, Oral Hygiene Products, Perfumes, Hand/Toothbrush Sanitizers, Serums, Talc, Sunscreen, Tanning Liquid, Tattoo, Toners and Wigs
+
+Pet Supplies
+Aquarium Consumables, Hair Styling, Health Care/Medicinal Products, Horse Girth/Grooming Kit/Braid Tail Bag/Hay/Liniment/Poultice, Inhaler Masks, Litter Box Enclosures, Litter Scoops, Pet Chew, Pet Food/Treat, Pet Pad, Pet Hygiene/Personal Care Products, Poultice, Tail Wraps, Waste Bags and Water Troughs
+
+Kindly always check a product's Returns Policy on the product page. Click here to view the Returns Policy.
+
+
+3.Can items be returned after the time period mentioned in the seller's Returns Policy?
+A.No, sellers will not be able to accept returns after the time period mentioned in the seller's Returns Policy.
+
+
+4.Do I have to return the freebie when I return a product?
+A.Yes, the freebie has to be returned along with the product.
+
+
+5.How do returns work?
+A.You can raise a request to return your items with these simple steps:
+1. Log into your Flipkart account
+2. Go to My Orders
+3. Click on 'Return' against the item you wish to return or exchange
+4. Fill in the details and raise a return request
+Once you raise a request, you'll get an email and SMS confirming that your request is being processed. Based on the item, your request may be automatically approved or you may be contacted for more details. If the request is approved, the item will be picked up after which you will get a replacement or refund. You can also track the status of your return request instantly from the 'My Orders' section of your Flipkart account.
+
+
+6.I see the 'Cancel' button but I can't click on it. Why?
+A.A greyed out and disabled 'Cancel' button can mean any one of the following:
+1. The item has been delivered already
+OR
+2. The item is non-refundable (e.g. Gift Card)
+
+
+
+
+
+________________________________________________________________________________________________________
+
+
+
+text - "I missed my order.what should i do"
+pattern - "(?=.*missed)(?=.*long)"-------------> many keyword to be set
+values - {"delivery","missed"} -----------------> only two keywords
+
+
+
+
+1.If I request for a replacement, when will I get it?
+request for replacement
+Visit My Orders to check the status of your replacement.In most locations, the replacement item is delivered to you at the time of pick-up. In all other areas, the replacement is initiated after the originally delivered item is picked up. Please check the SMS & email we send you for your replacement request for more details.
+
+"(?=.*request)(?=.*replacement)(?=.*when)(?=.*get)(?=.*long)"
+{"request","replacement","get"}
+
+values all
+value any get
+
+
+"(?=.*request)(?=.*replacement)(?=.*long)"
+{"request","replacement"}
+
+
+2.Which products are not eligible for returns?
+not eligible returns
+The following table contains a list of products that are not eligible for returns as per the seller’s Returns Policy : Category : Products that can’t be returned
+"(?=.*not)(?=.*eligible)(?=.*returns)(?=.*long)"
+{"not","eligible","returns"}
+{"returns","products"}
+
+
+3.Can items be returned after the time period mentioned in the seller's Returns Policy?
+items be returned after the time period mentioned in the seller's Returns Policy
+"(?=.*returned)(?=.*after)(?=.*period)(?=.*Policy)"
+{"returned","after","period","Policy"}
+{"items" ,"time","Return"}
+
+4.Do I have to return the freebie when I return a product?
+to return the freebie
+values3.All(function(x) subject.Contains(x))
+(?=.*return)(?=.*freebie)
+{"return","freebie"}
+{"return","product","to","the"}
+
+5.How do returns work?
+How do returns work
+values4.All(function(x) subject.Contains(x))
+(?=.*How)(?=.*work)
+{"How","work"}
+{" ", " "}
+
+
