@@ -137,6 +137,8 @@ ________________________________________________________________________________
 
 
 5.Do sellers on Flipkart ship internationally?
+
+mail subject 
 Do sellers on Flipkart ship internationally
 values9.All(function(x) subject.Contains(x)) 
 {"sellers", "ship","internationally"}--------------------------->>>>>>this keyword compusory in the subject ; not use extra keyword if we use not mentioned keywords then its not working 

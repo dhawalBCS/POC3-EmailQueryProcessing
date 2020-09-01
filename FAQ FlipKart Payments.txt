@@ -61,9 +61,13 @@ value10.Any(Function(x) subject.Contains(x))
 
 
 2.How can I order for large quantities of the product as part of a corporate order?
+
 order for large quantities of the product as part of a corporate order
+
 values11.All(Function(x) subject.Contains(x)) and 
-{"large","quantities","order","products"}
+??????{"large","quantities","order","products"}????
+
+values11.All(Function(x) subject.Contains(x)) and 
 {"order", "large", "quantities", "product", "part" , "corporate"}
 
 value11.Any(Function(x) subject.Contains(x))
