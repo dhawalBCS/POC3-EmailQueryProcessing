@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="826,4750" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="896,4948" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -52,14 +52,10 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="836,4585" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence sap:VirtualizedContainerService.HintSize="906,4743" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Can items be returned after the time period mentioned in the seller's Returns Policy?" Name="text" />
-      <Variable x:TypeArguments="s:String[]" Name="Values18">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;delivery&quot;,&quot;delay&quot;}" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="s:String[]" Default="[{&quot;delivery&quot;,&quot;delay&quot;}]" Name="Values18" />
       <Variable x:TypeArguments="x:Boolean" Name="first" />
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="matchOut" />
       <Variable x:TypeArguments="s:String[]" Default="[{&quot;request&quot;,&quot;replacement&quot;}]" Name="values" />
@@ -103,7 +99,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="794,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="864,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,251" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <sap:WorkflowViewStateService.ViewState>
@@ -129,26 +125,26 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="794,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[maillist]" OnlyUnreadMessages="True" Top="3">
+    <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="864,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[maillist]" OnlyUnreadMessages="True" Top="2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetOutlookMailMessages>
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="794,4340" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[maillist]">
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="864,4498" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[maillist]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="758,4206" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="828,4364" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[item.Attachments.Any]" sap:VirtualizedContainerService.HintSize="716,51" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[item.Attachments.Any]" sap:VirtualizedContainerService.HintSize="786,51" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -176,7 +172,7 @@
                 <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_17" Text="[&quot;No Attachments&quot; + item.Subject]" />
               </If.Else>
             </If>
-            <Assign sap:VirtualizedContainerService.HintSize="716,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign sap:VirtualizedContainerService.HintSize="786,60" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[subject]</OutArgument>
               </Assign.To>
@@ -184,59 +180,23 @@
                 <InArgument x:TypeArguments="x:String">[item.subject]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="716,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[subject]" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="786,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[subject]" />
             <Flowchart sap:VirtualizedContainerService.HintSize="786,3982" sap2010:WorkflowViewState.IdRef="Flowchart_2">
               <Flowchart.Variables>
                 <Variable x:TypeArguments="s:String[]" Default="[{&quot;return&quot;,&quot;freebie&quot;}]" Name="values3" />
                 <Variable x:TypeArguments="s:String[]" Default="[{&quot;How&quot;,&quot;work&quot;,&quot;returns&quot;}]" Name="values4" />
                 <Variable x:TypeArguments="s:String[]" Default="[{&quot;credit&quot;,&quot;card&quot;,&quot;EMI&quot;}]" Name="values10" />
                 <Variable x:TypeArguments="s:String[]" Default="[{&quot;EMI&quot;,&quot;option&quot;,&quot;shopping&quot;,&quot;mobile&quot;}]" Name="value10" />
-                <Variable x:TypeArguments="s:String[]" Name="Values16">
-                  <Variable.Default>
-                    <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot; order&quot;}" />
-                  </Variable.Default>
-                </Variable>
-                <Variable x:TypeArguments="s:String[]" Name="Value16">
-                  <Variable.Default>
-                    <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;how&quot;,&quot;can&quot;,&quot;I&quot;,&quot; to&quot;}" />
-                  </Variable.Default>
-                </Variable>
-                <Variable x:TypeArguments="s:String[]" Name="Values17">
-                  <Variable.Default>
-                    <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;missed&quot;,&quot;delivery&quot;,&quot;order&quot;}" />
-                  </Variable.Default>
-                </Variable>
-                <Variable x:TypeArguments="s:String[]" Name="Value17">
-                  <Variable.Default>
-                    <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;today&quot;,&quot;my&quot;,&quot;first time&quot;,&quot;not able&quot;,&quot;to&quot; ,&quot;collect&quot;}" />
-                  </Variable.Default>
-                </Variable>
-                <Variable x:TypeArguments="s:String[]" Name="Value18">
-                  <Variable.Default>
-                    <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;my&quot;,&quot;order&quot;,&quot;getting&quot;}" />
-                  </Variable.Default>
-                </Variable>
-                <Variable x:TypeArguments="s:String[]" Name="Values19">
-                  <Variable.Default>
-                    <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;approved&quot;,&quot;shipped&quot;,&quot;order&quot;}" />
-                  </Variable.Default>
-                </Variable>
-                <Variable x:TypeArguments="s:String[]" Name="Value19">
-                  <Variable.Default>
-                    <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;my&quot;,&quot;hasn't&quot;,&quot;haven't&quot;,&quot;yet&quot;}" />
-                  </Variable.Default>
-                </Variable>
+                <Variable x:TypeArguments="s:String[]" Default="[{&quot;order&quot;}]" Name="Values16" />
+                <Variable x:TypeArguments="s:String[]" Default="[{&quot;how&quot;,&quot;can&quot;,&quot;I&quot;,&quot; to&quot;}]" Name="Value16" />
+                <Variable x:TypeArguments="s:String[]" Default="[{&quot;missed&quot;,&quot;delivery&quot;,&quot;order&quot;}]" Name="Values17" />
+                <Variable x:TypeArguments="s:String[]" Default="[{&quot;today&quot;,&quot;my&quot;,&quot;first time&quot;,&quot;not able&quot;,&quot;to&quot; ,&quot;collect&quot;}]" Name="Value17" />
+                <Variable x:TypeArguments="s:String[]" Default="[{&quot;my&quot;,&quot;order&quot;,&quot;getting&quot;}]" Name="Value18" />
+                <Variable x:TypeArguments="s:String[]" Default="[{&quot;approved&quot;,&quot;shipped&quot;,&quot;order&quot;}]" Name="Values19" />
+                <Variable x:TypeArguments="s:String[]" Default="[{&quot;hasn't&quot;,&quot;haven't&quot;,&quot;yet&quot;}]" Name="Value19" />
                 <Variable x:TypeArguments="x:String" Name="variable1" />
-                <Variable x:TypeArguments="s:String[]" Name="Values20">
-                  <Variable.Default>
-                    <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;order&quot;,&quot;confirmed&quot;}" />
-                  </Variable.Default>
-                </Variable>
-                <Variable x:TypeArguments="s:String[]" Name="Value20">
-                  <Variable.Default>
-                    <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;how&quot;,&quot;I&quot;,&quot;know&quot;}" />
-                  </Variable.Default>
-                </Variable>
+                <Variable x:TypeArguments="s:String[]" Default="[{&quot;order&quot;,&quot;confirmed&quot;}]" Name="Values20" />
+                <Variable x:TypeArguments="s:String[]" Default="[{&quot;how&quot;,&quot;I&quot;,&quot;know&quot;,&quot;my&quot;}]" Name="Value20" />
                 <Variable x:TypeArguments="x:String" Name="variable3" />
               </Flowchart.Variables>
               <sap:WorkflowViewStateService.ViewState>
@@ -811,10 +771,7 @@
                                                                                       </FlowStep>
                                                                                     </FlowDecision.True>
                                                                                     <FlowDecision.False>
-                                                                                      <FlowDecision x:Name="__ReferenceID35" DisplayName="16" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_23">
-                                                                                        <FlowDecision.Condition>
-                                                                                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="values16.All(Function(x) subject.Contains(x)) And value16.Any(Function(x) subject.Contains(x))" />
-                                                                                        </FlowDecision.Condition>
+                                                                                      <FlowDecision x:Name="__ReferenceID35" Condition="[values16.All(Function(x) subject.Contains(x)) And value16.Any(Function(x) subject.Contains(x))]" DisplayName="16" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_23">
                                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -845,10 +802,7 @@
                                                                                           </FlowStep>
                                                                                         </FlowDecision.True>
                                                                                         <FlowDecision.False>
-                                                                                          <FlowDecision x:Name="__ReferenceID37" DisplayName="17" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_22">
-                                                                                            <FlowDecision.Condition>
-                                                                                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="values17.All(Function(x) subject.Contains(x)) And value17.Any(Function(x) subject.Contains(x))" />
-                                                                                            </FlowDecision.Condition>
+                                                                                          <FlowDecision x:Name="__ReferenceID37" Condition="[values17.All(Function(x) subject.Contains(x)) And value17.Any(Function(x) subject.Contains(x))]" DisplayName="17" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_22">
                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -866,7 +820,7 @@
                                                                                                     <av:Size x:Key="ShapeSize">200,51</av:Size>
                                                                                                   </scg:Dictionary>
                                                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                                                <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="The courier service delivering your order usually tries to deliver on the next business day in case you miss a delivery.&#xD;&#xA;You can check your SMS for more details on when the courier service will try to deliver again." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_20" MailMessage="[item]" ReplyAll="False">
+                                                                                                <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="The courier service delivering your order usually tries to deliver on the next business day in case you miss a delivery.&#xA;You can check your SMS for more details on when the courier service will try to deliver again." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_20" MailMessage="[item]" ReplyAll="False">
                                                                                                   <ui:ReplyToOutlookMailMessage.Files>
                                                                                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                                                                   </ui:ReplyToOutlookMailMessage.Files>
@@ -879,10 +833,7 @@
                                                                                               </FlowStep>
                                                                                             </FlowDecision.True>
                                                                                             <FlowDecision.False>
-                                                                                              <FlowDecision x:Name="__ReferenceID39" DisplayName="18" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_21">
-                                                                                                <FlowDecision.Condition>
-                                                                                                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="values18.All(Function(x) subject.Contains(x)) And value18.Any(Function(x) subject.Contains(x))" />
-                                                                                                </FlowDecision.Condition>
+                                                                                              <FlowDecision x:Name="__ReferenceID39" Condition="[values18.All(Function(x) subject.Contains(x)) And value18.Any(Function(x) subject.Contains(x))]" DisplayName="18" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_21">
                                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -913,10 +864,7 @@
                                                                                                   </FlowStep>
                                                                                                 </FlowDecision.True>
                                                                                                 <FlowDecision.False>
-                                                                                                  <FlowDecision x:Name="__ReferenceID41" DisplayName="19" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_20">
-                                                                                                    <FlowDecision.Condition>
-                                                                                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="values19.All(Function(x) subject.Contains(x)) And value19.Any(Function(x) subject.Contains(x))" />
-                                                                                                    </FlowDecision.Condition>
+                                                                                                  <FlowDecision x:Name="__ReferenceID41" Condition="[values19.All(Function(x) subject.Contains(x)) And value19.Any(Function(x) subject.Contains(x))]" DisplayName="19" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_20">
                                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -947,7 +895,10 @@
                                                                                                       </FlowStep>
                                                                                                     </FlowDecision.True>
                                                                                                     <FlowDecision.False>
-                                                                                                      <FlowDecision x:Name="__ReferenceID43" Condition="[values19.All(Function(x) subject.Contains(x)) And value19.Any(Function(x) subject.Contains(x))]" DisplayName="20" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_19">
+                                                                                                      <FlowDecision x:Name="__ReferenceID43" DisplayName="20" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_19">
+                                                                                                        <FlowDecision.Condition>
+                                                                                                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="values19.All(Function(x) subject. ToLower.Contains(x)) And value19.Any(Function(x) subject. ToLower.Contains(x))" />
+                                                                                                        </FlowDecision.Condition>
                                                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1082,26 +1033,6 @@
               <x:Reference>__ReferenceID40</x:Reference>
               <x:Reference>__ReferenceID41</x:Reference>
               <x:Reference>__ReferenceID42</x:Reference>
-              <FlowDecision Condition="[values19.All(Function(x) subject.Contains(x)) And value19.Any(Function(x) subject.Contains(x))]" DisplayName="19" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_24">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <av:Point x:Key="ShapeLocation">583.5,3237</av:Point>
-                    <av:Size x:Key="ShapeSize">70,87</av:Size>
-                    <av:PointCollection x:Key="TrueConnector">583.5,3280.5 448.5,3280.5 448.5,3315</av:PointCollection>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </FlowDecision>
-              <FlowDecision Condition="[values19.All(Function(x) subject.Contains(x)) And value19.Any(Function(x) subject.Contains(x))]" DisplayName="19" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_25">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <av:Point x:Key="ShapeLocation">496.5,3243</av:Point>
-                    <av:Size x:Key="ShapeSize">70,87</av:Size>
-                    <av:PointCollection x:Key="TrueConnector">496.5,3286.5 361.5,3286.5 361.5,3321</av:PointCollection>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </FlowDecision>
               <x:Reference>__ReferenceID43</x:Reference>
               <x:Reference>__ReferenceID44</x:Reference>
               <x:Reference>__ReferenceID45</x:Reference>
