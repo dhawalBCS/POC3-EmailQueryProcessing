@@ -54,7 +54,7 @@ ________________________________________________________________________________
 1.What is Flipkart's credit card EMI payment option?
 Flipkart's credit card EMI payment option
 values10.All(Function(x) subject.Contains(x)) and 
-{"credit","card","EMI"}
+{"credit","card","EMI""Payment"}
 
 value10.Any(Function(x) subject.Contains(x))
 {"EMI","option","shopping","mobile"}
@@ -65,10 +65,10 @@ value10.Any(Function(x) subject.Contains(x))
 order for large quantities of the product as part of a corporate order
 
 values11.All(Function(x) subject.Contains(x)) and 
-??????{"large","quantities","order","products"}????
+??????{"large","quantities","order","products"}????      
 
 values11.All(Function(x) subject.Contains(x)) and 
-{"order", "large", "quantities", "product", "part" , "corporate"}
+{"part","how", "corporate"}
 
 value11.Any(Function(x) subject.Contains(x))
 {"corporate","mobile ", "tablets","order"}
@@ -84,14 +84,14 @@ value12.Any(Function(x) subject.Contains(x))
 
 
 
-4.What is a 'card label'?
+4.What is a 'card label'?/ where can i find card label
 card label
 values13.All(Function(x) subject.Contains(x)) and 
 {"card","label"}
 value13.Any(Function(x) subject.Contains(x))
 
 
-5.What is the 'Save Card' feature?
+5.What is the 'Save Card' feature? 
 save card
 values14.All(Function(x) subject.Contains(x)) and 
 {"save","card"}
