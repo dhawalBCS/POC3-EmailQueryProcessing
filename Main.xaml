@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1104,6089" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1104,6763" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="44">
+    <scg:List x:TypeArguments="x:String" Capacity="24">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -54,7 +54,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1114,5924" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence sap:VirtualizedContainerService.HintSize="1114,6598" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Can items be returned after the time period mentioned in the seller's Returns Policy?" Name="text" />
       <Variable x:TypeArguments="s:String[]" Default="[{&quot;delivery&quot;,&quot;delay&quot;}]" Name="Values18" />
@@ -127,65 +127,69 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="1072,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[maillist]" OnlyUnreadMessages="True" Top="1">
+    <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="1072,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[maillist]" OnlyUnreadMessages="True" Top="5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetOutlookMailMessages>
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1072,5679" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[maillist]">
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1072,6353" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[maillist]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1036,5545" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1036,6219" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="ReceivedDate" />
               <Variable x:TypeArguments="x:String" Name="From_ID" />
               <Variable x:TypeArguments="x:String" Name="To_ID" />
               <Variable x:TypeArguments="x:String" Name="Subject" />
               <Variable x:TypeArguments="sd:DataTable" Name="EmailDT" />
+              <Variable x:TypeArguments="x:String" Name="Recieved_Date1" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[item.Attachments.Any]" sap:VirtualizedContainerService.HintSize="994,51" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[item.Attachments.Any]" sap:VirtualizedContainerService.HintSize="994,725" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,577" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="Recieved_Date2" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_16" Text="[&quot;Attachments Found &quot; + item.Subject]" />
-                      </Sequence>
-                    </ui:CommentOut.Body>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
-                  <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" FolderPath="E:\BCS PUNE\POC\POC3 - FlipKart Question And Answer\Attachment Mail" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[item]">
+                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Recieved_Date1]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[item.Headers("Date")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Recieved_Date2]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[Recieved_Date1.Replace("/" ,"-")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_18" Text="[Recieved_Date2]" />
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_16" Text="[&quot;Attachments Found &quot; + item.Subject]" />
+                  <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" FolderPath="[&quot;E:\BCS PUNE\POC\POC3 - FlipKart Question And Answer\Attachment Mail\ &quot;  +  &quot;  &quot;  +  item.From.Address + &quot;  &quot; + DateTime.Today.ToFileTime.ToString]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[item]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -195,24 +199,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-                  <ui:CommentOut.Body>
-                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_17" Text="[&quot;No Attachments&quot; + item.Subject]" />
-                    </Sequence>
-                  </ui:CommentOut.Body>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </ui:CommentOut>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_17" Text="[&quot;No Attachments&quot; + item.Subject]" />
               </If.Else>
             </If>
             <Assign sap:VirtualizedContainerService.HintSize="994,60" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -244,33 +231,34 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                  <av:Point x:Key="ShapeLocation">320,2.5</av:Point>
                   <av:Size x:Key="ShapeSize">60,75</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,106.5</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">350,77.5 350,106.5</av:PointCollection>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   <x:Double x:Key="Width">960</x:Double>
                   <x:Double x:Key="Height">4411.232</x:Double>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Flowchart.StartNode>
-                <x:Reference>__ReferenceID52</x:Reference>
+                <x:Reference>__ReferenceID69</x:Reference>
               </Flowchart.StartNode>
-              <FlowDecision x:Name="__ReferenceID52" Condition="[values.All(function(x) subject.Contains(x))and value.Any(function(x) subject.Contains(x))]" DisplayName="0" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_12">
+              <FlowDecision x:Name="__ReferenceID69" Condition="[values.All(function(x) subject.Contains(x))and value.Any(function(x) subject.Contains(x))]" DisplayName="0" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_12">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <av:Point x:Key="ShapeLocation">265,106.5</av:Point>
+                    <av:Point x:Key="ShapeLocation">315,106.5</av:Point>
                     <av:Size x:Key="ShapeSize">70,87</av:Size>
-                    <av:PointCollection x:Key="TrueConnector">265,150 100,150 100,224.5</av:PointCollection>
-                    <av:PointCollection x:Key="FalseConnector">335,150 360,150 360,266.5 300,266.5 300,296.5</av:PointCollection>
+                    <av:PointCollection x:Key="TrueConnector">315,150 110,150 110,164.5</av:PointCollection>
+                    <av:PointCollection x:Key="FalseConnector">385,150 410,150 410,236.5 350,236.5 350,266.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <FlowDecision.True>
                   <FlowStep x:Name="__ReferenceID11">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">0,224.5</av:Point>
+                        <av:Point x:Key="ShapeLocation">10,164.5</av:Point>
                         <av:Size x:Key="ShapeSize">200,51</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">110,215.5 110,234.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="Visit My Orders to check the status of your replacement.In most locations, the replacement item is delivered to you at the time of pick-up. In all other areas, the replacement is initiated after the originally delivered item is picked up. Please check the SMS &amp; email we send you for your replacement request for more details." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_1" MailMessage="[item]" ReplyAll="False">
@@ -283,6 +271,24 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ReplyToOutlookMailMessage>
+                    <FlowStep.Next>
+                      <FlowStep x:Name="__ReferenceID68">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">10,234.5</av:Point>
+                            <av:Size x:Key="ShapeSize">200,51</av:Size>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_24" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:MoveOutlookMessage>
+                      </FlowStep>
+                    </FlowStep.Next>
                   </FlowStep>
                 </FlowDecision.True>
                 <FlowDecision.False>
@@ -290,18 +296,19 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <av:Point x:Key="ShapeLocation">265,296.5</av:Point>
+                        <av:Point x:Key="ShapeLocation">315,266.5</av:Point>
                         <av:Size x:Key="ShapeSize">70,87</av:Size>
-                        <av:PointCollection x:Key="FalseConnector">335,340 360,340 360,406.5 300,406.5 300,436.5</av:PointCollection>
-                        <av:PointCollection x:Key="TrueConnector">265,340 110,340 110,374.5</av:PointCollection>
+                        <av:PointCollection x:Key="FalseConnector">385,310 415,310 415,396.5 330,396.5 330,426.5</av:PointCollection>
+                        <av:PointCollection x:Key="TrueConnector">315,310 100,310 100,334.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <FlowDecision.True>
                       <FlowStep x:Name="__ReferenceID12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">10,374.5</av:Point>
+                            <av:Point x:Key="ShapeLocation">0,334.5</av:Point>
                             <av:Size x:Key="ShapeSize">200,51</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">100,385.5 100,404.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="The following table contains a list of products that are not eligible for returns as per the seller’s Returns Policy    :     Category    :Products that can’t be returned" DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_2" MailMessage="[item]" ReplyAll="False">
@@ -314,6 +321,24 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:ReplyToOutlookMailMessage>
+                        <FlowStep.Next>
+                          <FlowStep x:Name="__ReferenceID67">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">0,404.5</av:Point>
+                                <av:Size x:Key="ShapeSize">200,51</av:Size>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_25" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:MoveOutlookMessage>
+                          </FlowStep>
+                        </FlowStep.Next>
                       </FlowStep>
                     </FlowDecision.True>
                     <FlowDecision.False>
@@ -321,18 +346,19 @@
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <av:Point x:Key="ShapeLocation">265,436.5</av:Point>
+                            <av:Point x:Key="ShapeLocation">295,426.5</av:Point>
                             <av:Size x:Key="ShapeSize">70,87</av:Size>
-                            <av:PointCollection x:Key="TrueConnector">265,480 120,480 120,524.02</av:PointCollection>
-                            <av:PointCollection x:Key="FalseConnector">335,480 350,480 350,556.5 290,556.5 290,586.5</av:PointCollection>
+                            <av:PointCollection x:Key="TrueConnector">295,470 100,470 100,494.5</av:PointCollection>
+                            <av:PointCollection x:Key="FalseConnector">365,470 390,470 390,556.5 330,556.5 330,586.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <FlowDecision.True>
                           <FlowStep x:Name="__ReferenceID13">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:Point x:Key="ShapeLocation">20,524.02</av:Point>
+                                <av:Point x:Key="ShapeLocation">0,494.5</av:Point>
                                 <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                <av:PointCollection x:Key="ConnectorLocation">100,545.5 100,564.5</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="No, sellers will not be able to accept returns after the time period mentioned in the seller's Returns Policy." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_3" MailMessage="[item]" ReplyAll="False">
@@ -345,6 +371,24 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:ReplyToOutlookMailMessage>
+                            <FlowStep.Next>
+                              <FlowStep x:Name="__ReferenceID66">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">0,564.5</av:Point>
+                                    <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_26" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:MoveOutlookMessage>
+                              </FlowStep>
+                            </FlowStep.Next>
                           </FlowStep>
                         </FlowDecision.True>
                         <FlowDecision.False>
@@ -352,18 +396,19 @@
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <av:Point x:Key="ShapeLocation">255,586.5</av:Point>
+                                <av:Point x:Key="ShapeLocation">295,586.5</av:Point>
                                 <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                <av:PointCollection x:Key="FalseConnector">325,630 350,630 350,706.5 290,706.5 290,736.5</av:PointCollection>
-                                <av:PointCollection x:Key="TrueConnector">255,630 120,630 120,664.5</av:PointCollection>
+                                <av:PointCollection x:Key="FalseConnector">365,630 390,630 390,706.5 330,706.5 330,736.5</av:PointCollection>
+                                <av:PointCollection x:Key="TrueConnector">295,630 110,630 110,644.5</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <FlowDecision.True>
                               <FlowStep x:Name="__ReferenceID14">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <av:Point x:Key="ShapeLocation">20,664.5</av:Point>
+                                    <av:Point x:Key="ShapeLocation">10,644.5</av:Point>
                                     <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">110,695.5 110,714.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="Yes, the freebie has to be returned along with the product." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_4" MailMessage="[item]" ReplyAll="False">
@@ -376,6 +421,24 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:ReplyToOutlookMailMessage>
+                                <FlowStep.Next>
+                                  <FlowStep x:Name="__ReferenceID65">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">10,714.5</av:Point>
+                                        <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_27" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:MoveOutlookMessage>
+                                  </FlowStep>
+                                </FlowStep.Next>
                               </FlowStep>
                             </FlowDecision.True>
                             <FlowDecision.False>
@@ -383,18 +446,19 @@
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <av:Point x:Key="ShapeLocation">255,736.5</av:Point>
+                                    <av:Point x:Key="ShapeLocation">295,736.5</av:Point>
                                     <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                    <av:PointCollection x:Key="FalseConnector">325,780 350,780 350,856.5 290,856.5 290,886.5</av:PointCollection>
-                                    <av:PointCollection x:Key="TrueConnector">255,780 110,780 110,814.5</av:PointCollection>
+                                    <av:PointCollection x:Key="FalseConnector">365,780 390,780 390,856.5 330,856.5 330,886.5</av:PointCollection>
+                                    <av:PointCollection x:Key="TrueConnector">295,780 100,780 100,794.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <FlowDecision.True>
                                   <FlowStep x:Name="__ReferenceID15">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">10,814.5</av:Point>
+                                        <av:Point x:Key="ShapeLocation">0,794.5</av:Point>
                                         <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">100,845.5 100,864.5</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="You can raise a request to return your items with these simple steps   :   1. Log into your Flipkart account     2. Go to My Orders  3. Click on 'Return' against the item you wish to return or exchange        4. Fill in the details and raise a return reques" DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_5" MailMessage="[item]" ReplyAll="False">
@@ -407,6 +471,24 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:ReplyToOutlookMailMessage>
+                                    <FlowStep.Next>
+                                      <FlowStep x:Name="__ReferenceID64">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">0,864.5</av:Point>
+                                            <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_28" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:MoveOutlookMessage>
+                                      </FlowStep>
+                                    </FlowStep.Next>
                                   </FlowStep>
                                 </FlowDecision.True>
                                 <FlowDecision.False>
@@ -414,18 +496,19 @@
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <av:Point x:Key="ShapeLocation">255,886.5</av:Point>
+                                        <av:Point x:Key="ShapeLocation">295,886.5</av:Point>
                                         <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                        <av:PointCollection x:Key="TrueConnector">255,930 110,930 110,964.5</av:PointCollection>
-                                        <av:PointCollection x:Key="FalseConnector">325,930 345.5,930 345.5,1006.5 285.5,1006.5 285.5,1036.5</av:PointCollection>
+                                        <av:PointCollection x:Key="TrueConnector">295,930 100,930 100,944.5</av:PointCollection>
+                                        <av:PointCollection x:Key="FalseConnector">365,930 375.5,930 375.5,1006.5 285.5,1006.5 285.5,1036.5</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <FlowDecision.True>
                                       <FlowStep x:Name="__ReferenceID16">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">10,964.5</av:Point>
+                                            <av:Point x:Key="ShapeLocation">0,944.5</av:Point>
                                             <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                            <av:PointCollection x:Key="ConnectorLocation">100,995.5 100,1014.5</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="You could see different prices for the same product, as it could be listed by many Sellers." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_6" MailMessage="[item]" ReplyAll="False">
@@ -438,6 +521,24 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </ui:ReplyToOutlookMailMessage>
+                                        <FlowStep.Next>
+                                          <FlowStep x:Name="__ReferenceID63">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">0,1014.5</av:Point>
+                                                <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_14" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:MoveOutlookMessage>
+                                          </FlowStep>
+                                        </FlowStep.Next>
                                       </FlowStep>
                                     </FlowDecision.True>
                                     <FlowDecision.False>
@@ -447,7 +548,7 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <av:Point x:Key="ShapeLocation">250.5,1036.5</av:Point>
                                             <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                            <av:PointCollection x:Key="TrueConnector">250.5,1080 110,1080 110,1114.5</av:PointCollection>
+                                            <av:PointCollection x:Key="TrueConnector">250.5,1080 100,1080 100,1104.5</av:PointCollection>
                                             <av:PointCollection x:Key="FalseConnector">320.5,1080 345.5,1080 345.5,1166.5 285.5,1166.5 285.5,1196.5</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
@@ -455,8 +556,9 @@
                                           <FlowStep x:Name="__ReferenceID17">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:Point x:Key="ShapeLocation">10,1114.5</av:Point>
+                                                <av:Point x:Key="ShapeLocation">0,1104.5</av:Point>
                                                 <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                <av:PointCollection x:Key="ConnectorLocation">100,1155.5 100,1174.5</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="Installation and demo are offered for certain items by sellers through the brand or an authorised service provider. Please check the individual product page to see if these services are offered for the item." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_7" MailMessage="[item]" ReplyAll="False">
@@ -469,6 +571,24 @@
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                             </ui:ReplyToOutlookMailMessage>
+                                            <FlowStep.Next>
+                                              <FlowStep x:Name="__ReferenceID62">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">0,1174.5</av:Point>
+                                                    <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_15" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </ui:MoveOutlookMessage>
+                                              </FlowStep>
+                                            </FlowStep.Next>
                                           </FlowStep>
                                         </FlowDecision.True>
                                         <FlowDecision.False>
@@ -478,16 +598,17 @@
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 <av:Point x:Key="ShapeLocation">250.5,1196.5</av:Point>
                                                 <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                                <av:PointCollection x:Key="FalseConnector">320.5,1240 345.5,1240 345.5,1316.5 285.5,1316.5 285.5,1346.5</av:PointCollection>
-                                                <av:PointCollection x:Key="TrueConnector">250.5,1240 120,1240 120,1284.02</av:PointCollection>
+                                                <av:PointCollection x:Key="FalseConnector">320.5,1240 340,1240 340,1316.5 310,1316.5 310,1346.5</av:PointCollection>
+                                                <av:PointCollection x:Key="TrueConnector">250.5,1240 100,1240 100,1254.5</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <FlowDecision.True>
                                               <FlowStep x:Name="__ReferenceID18">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <av:Point x:Key="ShapeLocation">20,1284.02</av:Point>
+                                                    <av:Point x:Key="ShapeLocation">0,1254.5</av:Point>
                                                     <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                    <av:PointCollection x:Key="ConnectorLocation">100,1305.5 100,1324.5</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="Yes, it's necessary to log into your Flipkart account to shop. Shopping as a logged-in user is fast &amp; convenient and also provides extra security.You'll have access to a personalised shopping experience including recommendations and quicker check-out." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_8" MailMessage="[item]" ReplyAll="False">
@@ -500,6 +621,24 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </ui:ReplyToOutlookMailMessage>
+                                                <FlowStep.Next>
+                                                  <FlowStep x:Name="__ReferenceID61">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <av:Point x:Key="ShapeLocation">0,1324.5</av:Point>
+                                                        <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_16" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </ui:MoveOutlookMessage>
+                                                  </FlowStep>
+                                                </FlowStep.Next>
                                               </FlowStep>
                                             </FlowDecision.True>
                                             <FlowDecision.False>
@@ -507,18 +646,19 @@
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    <av:Point x:Key="ShapeLocation">250.5,1346.5</av:Point>
+                                                    <av:Point x:Key="ShapeLocation">275,1346.5</av:Point>
                                                     <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                                    <av:PointCollection x:Key="FalseConnector">320.5,1390 350,1390 350,1496.5 260,1496.5 260,1526.5</av:PointCollection>
-                                                    <av:PointCollection x:Key="TrueConnector">250.5,1390 120,1390 120,1454</av:PointCollection>
+                                                    <av:PointCollection x:Key="FalseConnector">345,1390 375,1390 375,1496.5 260,1496.5 260,1526.5</av:PointCollection>
+                                                    <av:PointCollection x:Key="TrueConnector">275,1390 110,1390 110,1414.5</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <FlowDecision.True>
                                                   <FlowStep x:Name="__ReferenceID19">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <av:Point x:Key="ShapeLocation">20,1454</av:Point>
+                                                        <av:Point x:Key="ShapeLocation">10,1414.5</av:Point>
                                                         <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                        <av:PointCollection x:Key="ConnectorLocation">110,1465.5 110,1484.5</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="Yes, it's necessary to log into your Flipkart account to shop. Shopping as a logged-in user is fast &amp; convenient and also provides extra security.You'll have access to a personalised shopping experience including recommendations and quicker check-out." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_9" MailMessage="[item]" ReplyAll="False">
@@ -531,6 +671,24 @@
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                     </ui:ReplyToOutlookMailMessage>
+                                                    <FlowStep.Next>
+                                                      <FlowStep x:Name="__ReferenceID60">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <av:Point x:Key="ShapeLocation">10,1484.5</av:Point>
+                                                            <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_17" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </ui:MoveOutlookMessage>
+                                                      </FlowStep>
+                                                    </FlowStep.Next>
                                                   </FlowStep>
                                                 </FlowDecision.True>
                                                 <FlowDecision.False>
@@ -540,7 +698,7 @@
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         <av:Point x:Key="ShapeLocation">225,1526.5</av:Point>
                                                         <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                                        <av:PointCollection x:Key="TrueConnector">225,1570 100,1570 100,1624.5</av:PointCollection>
+                                                        <av:PointCollection x:Key="TrueConnector">225,1570 100,1570 100,1594.5</av:PointCollection>
                                                         <av:PointCollection x:Key="FalseConnector">295,1570 320,1570 320,1666.5 260,1666.5 260,1696.5</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
@@ -548,8 +706,9 @@
                                                       <FlowStep x:Name="__ReferenceID20">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <av:Point x:Key="ShapeLocation">0,1624.5</av:Point>
+                                                            <av:Point x:Key="ShapeLocation">0,1594.5</av:Point>
                                                             <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                            <av:PointCollection x:Key="ConnectorLocation">100,1645.5 100,1664.5</av:PointCollection>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
                                                         <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="Items marked as 'Preorder' or 'Forthcoming' are expected to be released soon and you can pre-book them with sellers. Such items will be shipped after their official release by the seller with whom you've pre-booked them." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_10" MailMessage="[item]" ReplyAll="False">
@@ -562,6 +721,24 @@
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                         </ui:ReplyToOutlookMailMessage>
+                                                        <FlowStep.Next>
+                                                          <FlowStep x:Name="__ReferenceID59">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <av:Point x:Key="ShapeLocation">0,1664.5</av:Point>
+                                                                <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_18" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                            </ui:MoveOutlookMessage>
+                                                          </FlowStep>
+                                                        </FlowStep.Next>
                                                       </FlowStep>
                                                     </FlowDecision.True>
                                                     <FlowDecision.False>
@@ -571,7 +748,7 @@
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             <av:Point x:Key="ShapeLocation">225,1696.5</av:Point>
                                                             <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                                            <av:PointCollection x:Key="TrueConnector">225,1740 100,1740 100,1784.5</av:PointCollection>
+                                                            <av:PointCollection x:Key="TrueConnector">225,1740 100,1740 100,1764.5</av:PointCollection>
                                                             <av:PointCollection x:Key="FalseConnector">295,1740 325,1740 325,1846.5 270,1846.5 270,1876.5</av:PointCollection>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
@@ -579,8 +756,9 @@
                                                           <FlowStep x:Name="__ReferenceID21">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <av:Point x:Key="ShapeLocation">0,1784.5</av:Point>
+                                                                <av:Point x:Key="ShapeLocation">0,1764.5</av:Point>
                                                                 <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                <av:PointCollection x:Key="ConnectorLocation">100,1815.5 100,1834.5</av:PointCollection>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
                                                             <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="Items marked as 'Preorder' or 'Forthcoming' are expected to be released soon and you can pre-book them with sellers. Such items will be shipped after their official release by the seller with whom you've pre-booked them." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_11" MailMessage="[item]" ReplyAll="False">
@@ -593,6 +771,24 @@
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
                                                             </ui:ReplyToOutlookMailMessage>
+                                                            <FlowStep.Next>
+                                                              <FlowStep x:Name="__ReferenceID58">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <av:Point x:Key="ShapeLocation">0,1834.5</av:Point>
+                                                                    <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_19" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                </ui:MoveOutlookMessage>
+                                                              </FlowStep>
+                                                            </FlowStep.Next>
                                                           </FlowStep>
                                                         </FlowDecision.True>
                                                         <FlowDecision.False>
@@ -602,7 +798,7 @@
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                 <av:Point x:Key="ShapeLocation">235,1876.5</av:Point>
                                                                 <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                                                <av:PointCollection x:Key="TrueConnector">235,1920 100,1920 100,1974.5</av:PointCollection>
+                                                                <av:PointCollection x:Key="TrueConnector">235,1920 100,1920 100,1944.5</av:PointCollection>
                                                                 <av:PointCollection x:Key="FalseConnector">305,1920 335,1920 335,2026.5 275.5,2026.5 275.5,2056.5</av:PointCollection>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
@@ -610,8 +806,9 @@
                                                               <FlowStep x:Name="__ReferenceID22">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <av:Point x:Key="ShapeLocation">0,1974.5</av:Point>
+                                                                    <av:Point x:Key="ShapeLocation">0,1944.5</av:Point>
                                                                     <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                    <av:PointCollection x:Key="ConnectorLocation">100,1995.5 100,2014.5</av:PointCollection>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                 <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="Currently, sellers on Flipkart only ship within India." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_12" MailMessage="[item]" ReplyAll="False">
@@ -624,6 +821,24 @@
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                 </ui:ReplyToOutlookMailMessage>
+                                                                <FlowStep.Next>
+                                                                  <FlowStep x:Name="__ReferenceID57">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <av:Point x:Key="ShapeLocation">0,2014.5</av:Point>
+                                                                        <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_20" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </ui:MoveOutlookMessage>
+                                                                  </FlowStep>
+                                                                </FlowStep.Next>
                                                               </FlowStep>
                                                             </FlowDecision.True>
                                                             <FlowDecision.False>
@@ -634,15 +849,16 @@
                                                                     <av:Point x:Key="ShapeLocation">240.5,2056.5</av:Point>
                                                                     <av:Size x:Key="ShapeSize">70,87</av:Size>
                                                                     <av:PointCollection x:Key="FalseConnector">310.5,2100 335.5,2100 335.5,2206.5 275.5,2206.5 275.5,2236.5</av:PointCollection>
-                                                                    <av:PointCollection x:Key="TrueConnector">240.5,2100 100,2100 100,2164.02</av:PointCollection>
+                                                                    <av:PointCollection x:Key="TrueConnector">240.5,2100 100,2100 100,2134.5</av:PointCollection>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                 <FlowDecision.True>
                                                                   <FlowStep x:Name="__ReferenceID24">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <av:Point x:Key="ShapeLocation">0,2164.02</av:Point>
+                                                                        <av:Point x:Key="ShapeLocation">0,2134.5</av:Point>
                                                                         <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                        <av:PointCollection x:Key="ConnectorLocation">100,2185.5 100,2204.5</av:PointCollection>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                     <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="With Flipkart’s credit card EMI option, you can choose to pay in easy installments of 3, 6, 9, 12, 18, or 24 months, with credit cards from the following banks:&#xA;&#xA;HDFC&#xA;Citi&#xA;ICICI&#xA;Kotak&#xA;Axis&#xA;Induslnd&#xA;SBI&#xA;Standard Chartered&#xA;HSBC&#xA;*18 &amp; 24 months EMI options are available from select banks only. Please refer to the table below for more details:&#xA;&#xA;Banks&#x9;Supports 18 &amp; 24 months tenure&#x9;Minimum order value to avail 18 &amp; 24 months EMI options&#xA;HDFC&#x9;Yes&#x9;₹ 10,000&#xA;Citi&#x9;Yes&#x9;₹ 10,000&#xA;ICICI&#x9;Yes&#x9;₹ 10,000&#xA;Kotak&#x9;Yes&#x9;₹ 4,000&#xA;Axis&#x9;Yes&#x9;₹ 4,000&#xA;IndusInd&#x9;Yes&#x9;₹ 4,000&#xA;SBI&#x9;No&#x9;NA&#xA;Standard Chartered&#x9;Yes&#x9;₹ 4,000&#xA;HSBC&#x9;No&#x9;NA" DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_13" MailMessage="[item]" ReplyAll="False">
@@ -655,6 +871,24 @@
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                     </ui:ReplyToOutlookMailMessage>
+                                                                    <FlowStep.Next>
+                                                                      <FlowStep x:Name="__ReferenceID56">
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <av:Point x:Key="ShapeLocation">0,2204.5</av:Point>
+                                                                            <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                        <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_21" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                        </ui:MoveOutlookMessage>
+                                                                      </FlowStep>
+                                                                    </FlowStep.Next>
                                                                   </FlowStep>
                                                                 </FlowDecision.True>
                                                                 <FlowDecision.False>
@@ -664,7 +898,7 @@
                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                         <av:Point x:Key="ShapeLocation">240.5,2236.5</av:Point>
                                                                         <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                                                        <av:PointCollection x:Key="TrueConnector">240.5,2280 110,2280 110,2364.5</av:PointCollection>
+                                                                        <av:PointCollection x:Key="TrueConnector">240.5,2280 100,2280 100,2304.5</av:PointCollection>
                                                                         <av:PointCollection x:Key="FalseConnector">310.5,2280 340.5,2280 340.5,2386.5 290,2386.5 290,2416.5</av:PointCollection>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
@@ -672,8 +906,9 @@
                                                                       <FlowStep x:Name="__ReferenceID26">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                            <av:Point x:Key="ShapeLocation">10,2364.5</av:Point>
+                                                                            <av:Point x:Key="ShapeLocation">0,2304.5</av:Point>
                                                                             <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                            <av:PointCollection x:Key="ConnectorLocation">100,2355.5 100,2374.5</av:PointCollection>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
                                                                         <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="You can write to corporatesales@flipkart.com for your corporate gifting requirements." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_14" MailMessage="[item]" ReplyAll="False">
@@ -686,6 +921,24 @@
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                         </ui:ReplyToOutlookMailMessage>
+                                                                        <FlowStep.Next>
+                                                                          <FlowStep x:Name="__ReferenceID55">
+                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                <av:Point x:Key="ShapeLocation">0,2374.5</av:Point>
+                                                                                <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                              </scg:Dictionary>
+                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                            <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_22" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                            </ui:MoveOutlookMessage>
+                                                                          </FlowStep>
+                                                                        </FlowStep.Next>
                                                                       </FlowStep>
                                                                     </FlowDecision.True>
                                                                     <FlowDecision.False>
@@ -695,7 +948,7 @@
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                             <av:Point x:Key="ShapeLocation">255,2416.5</av:Point>
                                                                             <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                                                            <av:PointCollection x:Key="TrueConnector">255,2460 120,2460 120,2544.5</av:PointCollection>
+                                                                            <av:PointCollection x:Key="TrueConnector">255,2460 100,2460 100,2484.5</av:PointCollection>
                                                                             <av:PointCollection x:Key="FalseConnector">325,2460 355,2460 355,2576.5 295.5,2576.5 295.5,2606.5</av:PointCollection>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
@@ -703,8 +956,9 @@
                                                                           <FlowStep x:Name="__ReferenceID28">
                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <av:Point x:Key="ShapeLocation">20,2544.5</av:Point>
+                                                                                <av:Point x:Key="ShapeLocation">0,2484.5</av:Point>
                                                                                 <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                                <av:PointCollection x:Key="ConnectorLocation">100,2535.5 100,2564.5</av:PointCollection>
                                                                               </scg:Dictionary>
                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                             <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="You can specify a card label at the time of saving a card on Flipkart through the 'My Account' section. You can also add/edit the label anytime through 'My Saved Cards' in the 'My Account' section on Flipkart.&#xA;\A.A card label is a name you give to your card while saving it on Flipkart.&#xA;This helps in identifying the card at the time of making a payment. Even if you don't specify a card label, you can still identify the card by the first 2 and last 4 digits of the card number which are visible to you when the saved card is shown." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_15" MailMessage="[item]" ReplyAll="False">
@@ -717,6 +971,24 @@
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                             </ui:ReplyToOutlookMailMessage>
+                                                                            <FlowStep.Next>
+                                                                              <FlowStep x:Name="__ReferenceID54">
+                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                    <av:Point x:Key="ShapeLocation">0,2564.5</av:Point>
+                                                                                    <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                                  </scg:Dictionary>
+                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_23" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                </ui:MoveOutlookMessage>
+                                                                              </FlowStep>
+                                                                            </FlowStep.Next>
                                                                           </FlowStep>
                                                                         </FlowDecision.True>
                                                                         <FlowDecision.False>
@@ -727,15 +999,16 @@
                                                                                 <av:Point x:Key="ShapeLocation">260.5,2606.5</av:Point>
                                                                                 <av:Size x:Key="ShapeSize">70,87</av:Size>
                                                                                 <av:PointCollection x:Key="FalseConnector">330.5,2650 360.5,2650 360.5,2786.5 280,2786.5 280,2816.5</av:PointCollection>
-                                                                                <av:PointCollection x:Key="TrueConnector">260.5,2650 130,2650 130,2714.5</av:PointCollection>
+                                                                                <av:PointCollection x:Key="TrueConnector">260.5,2650 110,2650 110,2684.5</av:PointCollection>
                                                                               </scg:Dictionary>
                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                             <FlowDecision.True>
                                                                               <FlowStep x:Name="__ReferenceID30">
                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <av:Point x:Key="ShapeLocation">30,2714.5</av:Point>
+                                                                                    <av:Point x:Key="ShapeLocation">10,2684.5</av:Point>
                                                                                     <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                                    <av:PointCollection x:Key="ConnectorLocation">110,2735.5 110,2764.5</av:PointCollection>
                                                                                   </scg:Dictionary>
                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                                 <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="A card label is a name you give to your card while saving it on Flipkart.&#xA;This helps in identifying the card at the time of making a payment. Even if you don't specify a card label, you can still identify the card by the first 2 and last 4 digits of the card number which are visible to you when the saved card is shown." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_16" MailMessage="[item]" ReplyAll="False">
@@ -748,6 +1021,24 @@
                                                                                     </scg:Dictionary>
                                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                                 </ui:ReplyToOutlookMailMessage>
+                                                                                <FlowStep.Next>
+                                                                                  <FlowStep x:Name="__ReferenceID53">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <av:Point x:Key="ShapeLocation">10,2764.5</av:Point>
+                                                                                        <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                    <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_11" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                        </scg:Dictionary>
+                                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                                    </ui:MoveOutlookMessage>
+                                                                                  </FlowStep>
+                                                                                </FlowStep.Next>
                                                                               </FlowStep>
                                                                             </FlowDecision.True>
                                                                             <FlowDecision.False>
@@ -758,15 +1049,16 @@
                                                                                     <av:Point x:Key="ShapeLocation">245,2816.5</av:Point>
                                                                                     <av:Size x:Key="ShapeSize">70,87</av:Size>
                                                                                     <av:PointCollection x:Key="FalseConnector">315,2860 340,2860 340,2966.5 280,2966.5 280,2996.5</av:PointCollection>
-                                                                                    <av:PointCollection x:Key="TrueConnector">245,2860 130,2860 130,2904.5</av:PointCollection>
+                                                                                    <av:PointCollection x:Key="TrueConnector">245,2860 100,2860 100,2884.5</av:PointCollection>
                                                                                   </scg:Dictionary>
                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                                 <FlowDecision.True>
                                                                                   <FlowStep x:Name="__ReferenceID32">
                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                        <av:Point x:Key="ShapeLocation">30,2904.5</av:Point>
+                                                                                        <av:Point x:Key="ShapeLocation">0,2884.5</av:Point>
                                                                                         <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                                        <av:PointCollection x:Key="ConnectorLocation">100,2935.5 100,2954.5</av:PointCollection>
                                                                                       </scg:Dictionary>
                                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                                     <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="The 'Save Card' option lets you save your credit/debit cards on your Flipkart account. This helps you complete your transactions in a quick and easy way." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_17" MailMessage="[item]" ReplyAll="False">
@@ -779,6 +1071,24 @@
                                                                                         </scg:Dictionary>
                                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                                     </ui:ReplyToOutlookMailMessage>
+                                                                                    <FlowStep.Next>
+                                                                                      <FlowStep x:Name="__ReferenceID52">
+                                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                            <av:Point x:Key="ShapeLocation">0,2954.5</av:Point>
+                                                                                            <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                                          </scg:Dictionary>
+                                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                                        <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_12" MailFolder="Inbox\Processed Mail" MailMessage="[item]">
+                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                            </scg:Dictionary>
+                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                        </ui:MoveOutlookMessage>
+                                                                                      </FlowStep>
+                                                                                    </FlowStep.Next>
                                                                                   </FlowStep>
                                                                                 </FlowDecision.True>
                                                                                 <FlowDecision.False>
@@ -970,7 +1280,7 @@
                                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                             <av:Point x:Key="ShapeLocation">50,4014.5</av:Point>
                                                                                                             <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                                                                            <av:PointCollection x:Key="ConnectorLocation">150,4065.5 130,4065.5 130,4094.5</av:PointCollection>
+                                                                                                            <av:PointCollection x:Key="ConnectorLocation">150,4065.5 150,4094.5</av:PointCollection>
                                                                                                           </scg:Dictionary>
                                                                                                         </sap:WorkflowViewStateService.ViewState>
                                                                                                         <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="Sellers usually ship orders 1-2 business days before the delivery date so that they reach you on time. In case your order hasn't been shipped within this time please contact our Customer Support so that we can look into it." DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_22" MailMessage="[item]" ReplyAll="False">
@@ -987,7 +1297,7 @@
                                                                                                           <FlowStep x:Name="__ReferenceID46">
                                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                <av:Point x:Key="ShapeLocation">30,4094.5</av:Point>
+                                                                                                                <av:Point x:Key="ShapeLocation">50,4094.5</av:Point>
                                                                                                                 <av:Size x:Key="ShapeSize">200,51</av:Size>
                                                                                                               </scg:Dictionary>
                                                                                                             </sap:WorkflowViewStateService.ViewState>
@@ -1168,6 +1478,23 @@
               <x:Reference>__ReferenceID49</x:Reference>
               <x:Reference>__ReferenceID50</x:Reference>
               <x:Reference>__ReferenceID51</x:Reference>
+              <x:Reference>__ReferenceID52</x:Reference>
+              <x:Reference>__ReferenceID53</x:Reference>
+              <x:Reference>__ReferenceID54</x:Reference>
+              <x:Reference>__ReferenceID55</x:Reference>
+              <x:Reference>__ReferenceID56</x:Reference>
+              <x:Reference>__ReferenceID57</x:Reference>
+              <x:Reference>__ReferenceID58</x:Reference>
+              <x:Reference>__ReferenceID59</x:Reference>
+              <x:Reference>__ReferenceID60</x:Reference>
+              <x:Reference>__ReferenceID61</x:Reference>
+              <x:Reference>__ReferenceID62</x:Reference>
+              <x:Reference>__ReferenceID63</x:Reference>
+              <x:Reference>__ReferenceID64</x:Reference>
+              <x:Reference>__ReferenceID65</x:Reference>
+              <x:Reference>__ReferenceID66</x:Reference>
+              <x:Reference>__ReferenceID67</x:Reference>
+              <x:Reference>__ReferenceID68</x:Reference>
             </Flowchart>
             <Assign sap:VirtualizedContainerService.HintSize="994,60" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
@@ -1201,7 +1528,7 @@
                 <InArgument x:TypeArguments="x:String">[item.Subject.ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:BuildDataTable DataTable="[EmailDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="994,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Received_x0020_date&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;From_ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;TO_ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Subject&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Received_x0020_date&gt;text&lt;/Received_x0020_date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+            <ui:BuildDataTable DataTable="[EmailDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="994,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Received_x0020_date&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;From_ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TO_ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Subject&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Received_x0020_date&gt;text&lt;/Received_x0020_date&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
             <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ ReceivedDate, From_ID, To_ID, Subject}]" DataTable="[EmailDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="994,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
             <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[EmailDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="994,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="EmailDT.xlsx">
               <sap:WorkflowViewStateService.ViewState>
