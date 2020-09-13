@@ -146,7 +146,6 @@
               <Variable x:TypeArguments="x:String" Name="ReceivedDate" />
               <Variable x:TypeArguments="x:String" Name="From_ID" />
               <Variable x:TypeArguments="x:String" Name="To_ID" />
-              <Variable x:TypeArguments="x:String" Name="Subject" />
               <Variable x:TypeArguments="sd:DataTable" Name="EmailDT" />
               <Variable x:TypeArguments="x:String" Name="Recieved_Date1" />
             </Sequence.Variables>
@@ -177,7 +176,7 @@
                       <OutArgument x:TypeArguments="x:String">[Recieved_Date1]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[item.Headers("date")]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[item.Headers("date").ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_8">
@@ -185,12 +184,12 @@
                       <OutArgument x:TypeArguments="x:String">[Recieved_Date2]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[Recieved_Date1.Replace("/" ," ")]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[Recieved_Date1.Replace("/" ,"-").ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_18" Text="[Recieved_Date2]" />
                   <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_16" Text="[&quot;Attachments Found &quot; + item.Subject]" />
-                  <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" FolderPath="[&quot;E:\BCS PUNE\POC\POC3 - FlipKart Question And Answer\Attachment Mail\ &quot;  +  &quot; &quot;  +  item.From.Address + &quot; &quot;]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[item]">
+                  <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" FolderPath="[&quot;C:\Users\Dhaval\Desktop\New folder\&quot;+item.From.Address + item.Headers(&quot;date&quot;)]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[item]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
