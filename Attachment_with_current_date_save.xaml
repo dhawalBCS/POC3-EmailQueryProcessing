@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="AttachmentTest" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="721,2743" sap2010:WorkflowViewState.IdRef="AttachmentTest_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="AttachmentTest" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="962,651" sap2010:WorkflowViewState.IdRef="AttachmentTest_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
       <x:String>System.Activities</x:String>
@@ -60,9 +60,11 @@
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get outlook mail messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="689,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[maillist]" OnlyUnreadMessages="True" Top="1" />
     <ui:PathExists DisplayName="Path exists" Exists="[folderexists]" sap:VirtualizedContainerService.HintSize="689,89" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="E:\BCS PUNE\POC\POC3 - FlipKart Question And Answer\Attachment Mail\" PathType="Folder" />
     <If Condition="[folderexists]" sap:VirtualizedContainerService.HintSize="689,319" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
@@ -82,7 +84,6 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get outlook mail messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="689,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[maillist]" OnlyUnreadMessages="True" Top="1" />
     <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For each" sap:VirtualizedContainerService.HintSize="689,1936" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[maillist]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
@@ -169,7 +170,7 @@
                                   <OutArgument x:TypeArguments="si:FileStream">[fileStream]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
-                                  <InArgument x:TypeArguments="si:FileStream" xml:space="preserve">[File.Create("C:\Users\Swarajya\Desktop\Attachment\"+
+                                  <InArgument x:TypeArguments="si:FileStream" xml:space="preserve">[File.Create("C:\Users\Dhaval\Desktop\New folder\"+
 item.From.Address +"_"+
 Date2.Date.ToString("MM-dd-yyyy")+"_"+
 Date2.Hour.ToString+
